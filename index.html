@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<title>New Food App by gr8 Kamal Sir</title>
+		<style>
+			*{font-size:40px; text-align:center; margin:auto; }
+			body{background-color:lavender;}
+			.fc{border:groove; padding:2%; width:60%; border-radius:30px;}
+		</style>
+	</head>
+	<body>
+		<br/>
+		<h1>New Food You Like App</h1>
+		<br/>
+		<div class = "fc">
+			<form onsubmit = "show()">
+			<label>Name Please</label>
+			<br/>
+			<input type "text" id = "name" palceholder = "Enter Your Name " />
+			<br/><br/>
+			<label>Select Fav Food</label>
+			<br/>
+			<select id = "food">
+				<option value = "North Indian">North Indian </option>
+				<option value = "South Indian">South Indian </option>
+				<option value = "Fast Food">Fast Food </option>
+				<option value = "Mexican">Mexican </option>
+				<option value = "Italian">Italian </option>
+				<option value = "Continental">Continental </option>
+			</select>
+			<br/><br/>
+			<input type = "submit" />
+			</form>
+		</div>
+			<br/>
+			<h2 id = "msg" ></h2>
+		</div>
+			
+		<script>
+			function show()
+			{
+				event.preventDefault();
+				
+				let name = document.getElementById("name");
+				let ni = document.getElementById("ni");
+				let si = document.getElementById("si");
+				let ff = document.getElementById("ff");
+				let msg = document.getElementById("msg");
+
+				if (name.value === "")
+				{
+					alert("please enter name");
+					msg.innerHTML = "";
+					name.focus();
+					return;
+				}
+
+				if (name.value.trim() === "")
+				{
+					alert("name shud not be blank spaces");
+					msg.innerHTML = "";
+					name.focus();
+					name.value = "";
+					return;
+				}
+
+				if (! name.value.match(/^[A-Za-z ]+$/))
+				{
+					alert("name shud contain only alphabets");
+					msg.innerHTML = "";
+					name.focus();
+					name.value = "";
+					return;
+				}
+
+				let ans = "Name = " + name.value + " Food = " + food.value;
+				msg.innerHTML = ans;
+			}
+		</script
+	</body>
+</html>
